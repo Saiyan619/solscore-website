@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+
+.footer {
+    padding: $spacing-lg $spacing-md;
+    background: darken($color-bg, 2%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $spacing-md;
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .brand {
+        h3 {
+            font-family: $font-display;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+
+            span {
+                @include neon-text;
+            }
+        }
+
+        p {
+            color: $color-text-muted;
+            font-size: 0.9rem;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: $spacing-md;
+
+        a {
+            color: $color-text-muted;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $color-primary;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    .copyright {
+        margin-top: $spacing-lg;
+        text-align: center;
+        color: darken($color-text-muted, 20%);
+        font-size: 0.8rem;
+    }
+}

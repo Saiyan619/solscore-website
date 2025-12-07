@@ -1,0 +1,49 @@
+// Colors
+$color-bg: #050505;
+$color-surface: #121212;
+$color-surface-hover: #1e1e1e;
+$color-primary: #ff8800; // Bright neon orange
+$color-primary-glow: rgba(255, 136, 0, 0.4);
+$color-secondary: #8a2be2; // Purple
+$color-text-main: #ffffff;
+$color-text-muted: #a1a1aa;
+$color-border: #333333;
+
+// Fonts
+$font-main: 'Outfit', sans-serif;
+$font-display: 'Orbitron', sans-serif;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 8rem;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin glass {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@mixin neon-text {
+  color: $color-primary;
+  text-shadow: 0 0 10px $color-primary-glow;
+}
+
+@mixin neon-box {
+  box-shadow: 0 0 15px $color-primary-glow;
+  border: 1px solid $color-primary;
+}

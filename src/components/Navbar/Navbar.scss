@@ -1,0 +1,96 @@
+@import '../../styles/variables';
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    @include glass;
+    transition: all 0.3s ease;
+
+    .navbar_logo{
+        width:25px;
+        border-radius: 100px;
+    }
+
+    &.scrolled {
+        padding: $spacing-xs $spacing-md;
+        background: rgba(5, 5, 5, 0.9);
+    }
+
+    .logo {
+        font-family: $font-display;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: $color-text-main;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        span {
+            @include neon-text;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: $spacing-md;
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+
+        a {
+            font-weight: 500;
+            color: $color-text-muted;
+            transition: color 0.3s ease;
+            position: relative;
+
+            &:hover {
+                color: $color-primary;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $color-primary;
+                transition: width 0.3s ease;
+            }
+        }
+    }
+
+    .nav-actions {
+        display: flex;
+        gap: $spacing-sm;
+
+        .btn-launch {
+            background: $color-primary;
+            color: $color-bg;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px $color-primary-glow;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0 20px $color-primary-glow;
+            }
+        }
+    }
+}

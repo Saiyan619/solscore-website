@@ -1,0 +1,139 @@
+@import '../../styles/variables';
+
+.market-preview {
+    padding: $spacing-xl $spacing-md;
+    background: linear-gradient(180deg, $color-bg 0%, $color-surface 100%);
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        max-width: 1200px;
+        margin: 0 auto $spacing-lg;
+
+        h2 {
+            font-family: $font-display;
+            font-size: 2.5rem;
+        }
+
+        .view-all {
+            color: $color-primary;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+
+            &:hover {
+                gap: 1rem;
+            }
+        }
+    }
+
+    .markets-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: $spacing-md;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .market-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid $color-border;
+        border-radius: 12px;
+        padding: $spacing-md;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #8a2be2;
+            transform: translateY(-5px);
+
+            .card-header .league-icon {
+                transform: scale(1.1);
+            }
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(57, 255, 20, 0.1);
+            color: $color-primary;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                background: $color-primary;
+                border-radius: 50%;
+                box-shadow: 0 0 5px $color-primary;
+            }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: $spacing-md;
+
+            .league-icon {
+                width: 48px;
+                height: 48px;
+                background: $color-surface;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .league-info {
+                h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.2rem;
+                }
+
+                span {
+                    color: $color-text-muted;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: $spacing-sm;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            .stat {
+                display: flex;
+                flex-direction: column;
+
+                .label {
+                    font-size: 0.8rem;
+                    color: $color-text-muted;
+                    margin-bottom: 0.2rem;
+                }
+
+                .value {
+                    font-weight: 700;
+                    font-family: $font-display;
+                }
+            }
+        }
+    }
+}

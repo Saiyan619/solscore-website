@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.features {
+    padding: $spacing-xl $spacing-md;
+    background: $color-bg;
+    text-align: center;
+
+    h2 {
+        font-family: $font-display;
+        font-size: 2.5rem;
+        margin-bottom: $spacing-lg;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: $spacing-md;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature-item {
+        padding: $spacing-md;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: $color-secondary;
+            transform: translateY(-5px);
+
+            .icon {
+                color: $color-secondary;
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: $color-text-muted;
+            margin-bottom: $spacing-sm;
+            transition: all 0.3s ease;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: $spacing-xs;
+            color: $color-text-main;
+        }
+
+        p {
+            color: $color-text-muted;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    }
+}

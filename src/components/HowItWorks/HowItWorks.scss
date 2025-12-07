@@ -1,0 +1,98 @@
+@import '../../styles/variables';
+
+.how-it-works {
+    padding: $spacing-xl $spacing-md;
+    background: $color-bg;
+    position: relative;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: $spacing-lg;
+
+        h2 {
+            font-family: $font-display;
+            font-size: 2.5rem;
+            margin-bottom: $spacing-sm;
+
+            span {
+                color: $color-primary;
+            }
+        }
+    }
+
+    .steps-container {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-lg;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, $color-border, transparent);
+            z-index: 0;
+
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+
+    .step-card {
+        background: $color-surface;
+        padding: $spacing-md;
+        border-radius: 16px;
+        border: 1px solid $color-border;
+        width: 300px;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+        text-align: center;
+
+        &:hover {
+            transform: translateY(-10px);
+            border-color: $color-primary;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+            .step-number {
+                background: $color-primary;
+                color: $color-bg;
+                box-shadow: 0 0 15px $color-primary-glow;
+            }
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: $color-surface-hover;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $font-display;
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin: 0 auto $spacing-md;
+            transition: all 0.3s ease;
+            border: 2px solid $color-bg;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: $spacing-sm;
+            color: $color-text-main;
+        }
+
+        p {
+            color: $color-text-muted;
+            line-height: 1.6;
+        }
+    }
+}
