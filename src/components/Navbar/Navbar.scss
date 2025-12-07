@@ -5,10 +5,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: $spacing-sm $spacing-md;
+    padding: $spacing-md $spacing-md;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: $spacing-md;
     z-index: 1000;
     @include glass;
     transition: all 0.3s ease;
@@ -16,10 +17,11 @@
     .navbar_logo{
         width:25px;
         border-radius: 100px;
+        flex-shrink: 0;
     }
 
     &.scrolled {
-        padding: $spacing-xs $spacing-md;
+        padding: $spacing-sm $spacing-lg;
         background: rgba(5, 5, 5, 0.9);
     }
 
@@ -31,6 +33,16 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        flex-shrink: 0;
+        white-space: nowrap;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: $mobile) {
+            font-size: 1.1rem;
+        }
 
         span {
             @include neon-text;
@@ -39,7 +51,10 @@
 
     .nav-links {
         display: flex;
-        gap: $spacing-md;
+        gap: $spacing-lg;
+        margin: 0 $spacing-md;
+        flex: 1;
+        justify-content: center;
 
         @media (max-width: $mobile) {
             display: none;
@@ -50,6 +65,7 @@
             color: $color-text-muted;
             transition: color 0.3s ease;
             position: relative;
+            white-space: nowrap;
 
             &:hover {
                 color: $color-primary;
@@ -75,6 +91,7 @@
     .nav-actions {
         display: flex;
         gap: $spacing-sm;
+        flex-shrink: 0;
 
         .btn-launch {
             background: $color-primary;
@@ -86,6 +103,17 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
             box-shadow: 0 0 10px $color-primary-glow;
+            white-space: nowrap;
+
+            @media (max-width: 768px) {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            @media (max-width: $mobile) {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
+            }
 
             &:hover {
                 transform: translateY(-2px);

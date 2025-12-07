@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { FaFutbol } from 'react-icons/fa';
 import './Navbar.scss';
 
 const Navbar = () => {
