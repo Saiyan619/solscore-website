@@ -15,7 +15,7 @@ const MarketPreview = () => {
         <section className="market-preview" id="markets">
             <div className="section-header">
                 <h2>Active <span style={{ color: '#8a2be2' }}>Markets</span></h2>
-                <a href="#" className="view-all">View All <FaArrowRight /></a>
+                <a href="https://solscore-v2.vercel.app/markets" className="view-all">View All <FaArrowRight /></a>
             </div>
 
             <div className="markets-grid">

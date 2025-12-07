@@ -28,9 +28,12 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
+                    <a href='https://solscore-v2.vercel.app/'>
                     <button className="btn-primary">
                         Start Betting <FaArrowRight style={{ marginLeft: '8px' }} />
                     </button>
+                    </a>
+                    
                 </motion.div>
             </div>
 

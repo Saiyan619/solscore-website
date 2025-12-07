@@ -26,7 +26,9 @@ const Navbar = () => {
             </div>
 
             <div className="nav-actions">
+                <a href='https://solscore-v2.vercel.app/'>
                 <button className="btn-launch">Launch App</button>
+                </a>
             </div>
         </nav>
     );
